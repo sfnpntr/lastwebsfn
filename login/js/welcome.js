@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const user = localStorage.getItem("username");
+console.log("USER LOGIN:", user);
 
     if (user) {
         userInfo.innerText = "Halo, " + user;
