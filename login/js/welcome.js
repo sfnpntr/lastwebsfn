@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    const userInfo = document.getElementById("userInfo");
+    const authArea = document.getElementById("authArea");
+
     function goLogin() {
         window.location.href = "login/index.html";
     }
@@ -12,10 +15,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const user = localStorage.getItem("username");
 
     if (user) {
-        document.getElementById("userInfo").innerText = "Halo, " + user;
+        userInfo.innerText = "Halo, " + user;
 
-        document.getElementById("authArea").innerHTML = `
+        authArea.innerHTML = `
             <button onclick="logout()" class="nav-cta">Logout</button>
+        `;
+    } else {
+        userInfo.innerText = "Belum login";
+
+        authArea.innerHTML = `
+            <button onclick="goLogin()" class="nav-cta">Login</button>
         `;
     }
 
