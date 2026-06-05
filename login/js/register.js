@@ -13,7 +13,9 @@ document.getElementById("registerForm").addEventListener("submit", async functio
         body: `action=register&username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
     });
 
-    const data = await res.json();
+   const data = await res.json();
+console.log(data);
+alert(JSON.stringify(data));
 
     console.log("REGISTER RESPONSE:", data);
 
