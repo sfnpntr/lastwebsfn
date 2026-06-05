@@ -15,16 +15,14 @@ document.getElementById("registerForm").addEventListener("submit", async functio
 
     const data = await res.json();
 
+    console.log("REGISTER RESPONSE:", data);
+
     if (data.status === "success") {
-
         alert("Registrasi berhasil!");
-
         window.location.href = "../login/index.html";
-
     } else {
-
-        document.getElementById("message").innerText =
-            data.message || "Gagal registrasi";
-
+        alert(JSON.stringify(data));
+    }
+});
     }
 });
