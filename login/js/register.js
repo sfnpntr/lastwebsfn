@@ -16,9 +16,15 @@ document.getElementById("registerForm").addEventListener("submit", async functio
     const data = await res.json();
 
     if (data.status === "success") {
-        document.getElementById("message").innerText = "Registrasi berhasil, silakan login";
-       window.location.href = "../login/index.html";
+
+        alert("Registrasi berhasil!");
+
+        window.location.href = "../login/index.html";
+
     } else {
-        document.getElementById("message").innerText = data.message || "Gagal registrasi";
+
+        document.getElementById("message").innerText =
+            data.message || "Gagal registrasi";
+
     }
 });
